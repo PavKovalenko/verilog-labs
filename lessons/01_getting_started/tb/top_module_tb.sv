@@ -9,6 +9,11 @@ top_module uut (
 );
 
 initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, top_module_tb);
+
+    #1;
+
     $display("Simulation started");
 
     #1;
@@ -21,6 +26,7 @@ initial begin
         $display("TEST FAILED");
 
     $finish;
+    
 
 end
 
