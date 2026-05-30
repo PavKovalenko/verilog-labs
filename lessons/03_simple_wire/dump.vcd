@@ -1,0 +1,27 @@
+$date
+	Sat May 30 11:06:51 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module top_module_tb $end
+$var wire 1 ! out $end
+$var reg 1 " in $end
+$scope module uut $end
+$var wire 1 " in $end
+$var wire 1 ! out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+0!
+$end
+#2
+1!
+1"
+#3
