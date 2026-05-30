@@ -2,13 +2,14 @@
 
 module top_module_tb;
 
-logic one;
+logic zero;
 
 top_module uut (
-    .one(one)
+    .zero(zero)
 );
 
 initial begin
+    
     $dumpfile("dump.vcd");
     $dumpvars(0, top_module_tb);
 
@@ -18,15 +19,14 @@ initial begin
 
     #1;
 
-    $display("one = %b", one);
+    $display("zero = %b", zero);
 
-    if(one == 1'b1)
+    if(zero == 1'b0)
         $display("TEST PASSED");
     else 
         $display("TEST FAILED");
 
     $finish;
-    
 
 end
 

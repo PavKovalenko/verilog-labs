@@ -1,0 +1,46 @@
+#! /d/a/fpga-toolchain-build/fpga-toolchain-build/iverilog/_install/bin/vvp
+:ivl_version "11.0 (stable)" "(d3b0992)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\system.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\va_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2009.vpi";
+S_0000023ec43f36e0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0000023ec43f3870 .scope module, "top_module_tb" "top_module_tb" 3 3;
+ .timescale -9 -12;
+L_0000023ec4470028 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000023ec43f3130_0 .net "zero", 0 0, L_0000023ec4470028;  1 drivers
+S_0000023ec43f3a00 .scope module, "uut" "top_module" 3 7, 4 1 0, S_0000023ec43f3870;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "zero";
+v0000023ec45087b0_0 .net "zero", 0 0, L_0000023ec4470028;  alias, 1 drivers
+    .scope S_0000023ec43f3870;
+T_0 ;
+    %vpi_call/w 3 13 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call/w 3 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000023ec43f3870 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call/w 3 18 "$display", "Simulation started" {0 0 0};
+    %delay 1000, 0;
+    %vpi_call/w 3 22 "$display", "zero = %b", v0000023ec43f3130_0 {0 0 0};
+    %load/vec4 v0000023ec43f3130_0;
+    %cmpi/e 0, 0, 1;
+    %jmp/0xz  T_0.0, 4;
+    %vpi_call/w 3 25 "$display", "TEST PASSED" {0 0 0};
+    %jmp T_0.1;
+T_0.0 ;
+    %vpi_call/w 3 27 "$display", "TEST FAILED" {0 0 0};
+T_0.1 ;
+    %vpi_call/w 3 29 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb/top_module_tb.sv";
+    "rtl/top_module.sv";
